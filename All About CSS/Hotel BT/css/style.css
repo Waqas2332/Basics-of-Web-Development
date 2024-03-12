@@ -240,6 +240,34 @@ p {
   padding-bottom: 40px;
 }
 
+/* contact form */
+
+#contact-form .form-group {
+  margin-bottom: 20px;
+}
+
+#contact-form .form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+#contact-form input,
+#contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+#contact-form textarea {
+  height: 200px;
+}
+
+ntact-form input:focus,
+#contact-form textarea:focus {
+  outline: none;
+  border-color: #f7c08a;
+}
+
 /* footer */
 #main-footer {
   text-align: center;
