@@ -30,9 +30,31 @@ function checkRequired(inputArr) {
   });
 }
 
+function checkLength(input, min, max) {
+  if (input.value.length < min) {
+    showError(
+      input,
+      `${getFieldName(input)} must be at least ${min} characters`
+    );
+  } else if (input.value.length > max) {
+    showError(input, `${getFieldName(input)} must less than ${max} characters`);
+  } else {
+    showSuccess(input);
+  }
+}
+
+function checkPassword(password1, password2) {
+  if (password1.value !== password2.value) {
+    showError(password2, "Passwords do not match");
+  }
+}
+
 // event listener
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
   checkRequired([username, email, password, c_password]);
+  checkLength(username, 3, 15);
+  checkLength(password, 6, 25);
+  checkPassword(password, c_password);
 });
